@@ -85,4 +85,4 @@ Ausser der Zaehlung:
 10. [Parallele Verarbeitung 2](/uebung10/) Consumer/Producer Problem
 
 
-_Subscribe to [https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io) repository to follow updates._
+_Abboniere das [https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io) Repository um bei Updates benachrichtigt zu werden._
