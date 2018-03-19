@@ -1,49 +1,93 @@
 # Remarks to Programmieren 2
 
-1 Spezifikation, Test und Ausnahmen: Annotations und JUnit
-	Übung: Einfache Tests; vielleicht Übung vom letzten mal?
 
-_OOP Teil_
-3 Datenstrukturen (Interfaces)
-- Liste: array list, blocked array list, linked list (inner class)
-	Übung: Stack (insert-front)?
-- Set: list, binary tree
-	Übung: Binärbaum, Anwendung: Strings; wiederholungen?
-- Map: list of pairs, binary tree with list of pairs
-	Übung: Map char->int, ch
-
-1 Generics; Comarapable und Comparator
-	Liste, Sortieren
-
-1 Iteratoren (einfach und Baum-Agenda)
-	Iterator fuer Liste, Baum und Map
-
-2 Vererbung
-- Polymorphie, Verschattung; Object (equals, hashCode, toString)
-1. [Klassen, Objekte, Vererbung, Statisches](/uebung01/): Zoo-Spiel, Teil 1
-2. [Equals, hashCoce und toString](/uebung02/): Zoo-Spiel: Erweitert
-- abstract base classes (and their relation to interfaces)
-
-[Fehlerbehandlung, Exceptions und Tests](/uebung03/): Zoo-Spiel: Erweitert, jetzt mit Webfront-end; Zustandsautomat  --> als GUI?
-
-_algorithmischer Teil_
-
-1 Rekursion (einfach, Baum)
-	[Rekursion](/uebung08/)
-
-1 Sortieren: Einstieg ueber Binaere Suche? Selection/Insertion (iterativ), Merge (rekursiv); Comparator
-	Warteschlange und PriorityQueue
-
-1 Arbeiten mit Containern: Filter, Map, Reduce
-	Übung: Tweets Übung (filter-map-reduce)
-
-_SE Teil_
-
-Annotationen
-
-1 Parallele Verarbeitung: Thread/Runnable; Consumer/Producer; Futures?
-
-1 Design Patterns: Iterator, Composite, Factory
+- 3/21
+	+ Spezifikation mit UML; Klassen und Objekte, Sichtbarkeiten und Kapselung
+	+ Beispiel: rationale Zahlen
+		* Konstruktoren
+		* Klassenvariablen
+		* Überladung
+		* Überdeckung (shadowing), `this`
+	+ JavaDoc
+	+ Testen mit JUnit
+	+ Ausnahmebehandlung
+	+ Versionierung mit git
+	+ Übung: Einfache Tests; vielleicht Übung vom letzten mal?
+- 3/28
+	+ Wiederholung: Arrays
+	+ Arraylist: reallokiert und verblockt
+	+ Interfaces, innere Klassen
+	+ LinkedList: toString, add, get, remove
+	+ Übung: Stack
+- 4/4
+	+ Set für ints; beginne 1:1 mit LinkedList
+	+ Binärbaum: contains, add, remove (via add-left-right)
+	+ Exkurs: Rekursion für `toString`
+	+ Übung: Set von Strings (`compareTo()`)
+- 4/11
+	+ Generics
+	+ Einfach: Liste
+	+ Kombiniert: `Comparator<T>` für `Set<T>`
+	+ Bounds: `Set<T extends Comparable<T>>`
+	+ Ausblick: `super` und Wildcards
+- 4/18
+	+ Map als generischer assoziativer Container
+	+ Interface: put, get, containsKey, delete (?)
+	+ via List
+	+ via Binärbaum
+	+ Übung: Map, Wörter zählen, spezielle abfragen (keine Iteration)
+- 4/25
+	+ Annotationen
+	+ Einführung in die PStA (Contestsystem)
+	+ Übung: Contestsystem
+- 5/2
+	+ Iterator (und Factory)
+	+ Für Liste
+	+ Für Baum (-> Agenda)
+	+ Übung: Iterator für Liste und Map; Wörter zählen
+- 5/9
+	+ Rekursion
+	+ ggt, fak, etc.
+	+ Baum: toString (via print or printstream)
+	+ Liste: insert
+	+ Baum: insert
+	+ Übung: Summieren
+- 5/16:
+	+ Sortieren
+	+ insert/select
+	+ merge
+	+ Ausblick: quick
+	+ Übung: PriorityQueue (sortiert einfügen)
+- 5/23
+	+ Java Bibliothek: List, Set, Map, Iterator, Comparator
+	+ filter-map-reduce
+	+ Übung: Trump Tweet
+- 5/30
+	+ Klassen und UML
+	+ Datenstrukturen, Iteratoren
+	+ Nochmal Filter/Map/Reduce
+	+ Übung: ???
+- 6/6 Vererbung
+	+ `extends` vs. `implements`
+	+ Überschreiben (`@Override`), `super`
+	+ Basisklasse `Object`
+	+ Polymorphie
+	+ Übung: Auto, Spezialisierung
+- 6/3 ABC
+	+ Abstrakte Klassen und Interfaces
+	+ Musiker/Auto
+	+ Übung: Zustandsautomat
+- 6/20 Threads
+	+ Einfache Threads
+	+ Synchronisierung
+	+ Future
+	+ Consumer/Producer
+	+ Übung: Consumer/Producer
+- 6/27
+	+ Design Patterns: Iterator, Factory, Observer, Composite, ...
+	+ Composite
+	+ Observer
+	+ Übung: Android: `OnClick` und Futures? Mensa Plan?
 
 
 ## Übungen
