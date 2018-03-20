@@ -30,11 +30,11 @@ Der Leistungsnachweis ist aufgeteilt in eine
 - [Offizielle Java Dokumentation](https://docs.oracle.com/javase/9/)
 - Ullenboom, C: [Java ist auch eine Insel](https://www.amazon.de/Java-auch-eine-Insel-Java-Entwickler/dp/3836258692/), 2017. ([Online verfügbar!](http://openbook.galileocomputing.de/javainsel))
 - Bäckmann, M: [Objektorientierte Programmierung für Dummies](https://www.amazon.de/Objektorientierte-Programmierung-Dummies-Marcus-B%C3%A4ckmann/dp/3826629841/), 2002. _Das Buch ist für C++, die Methodik aber identisch zu Java._
-- Gamma, E et al.: [Design Patterns](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8), 1994.
+- Gamma, E et al.: [Design Patterns](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8), 1994. (Das Buch ist in englischer und deutscher Fassung in der Bibliothek vorhanden).
 
 
 ## Inhalt
-- **21. März: Professionelle Softwareentwicklung**
+- **21. März: Professionelle Softwareentwicklung** ([Einführung](00-einfuehrung/), [Skript](01-professionelle-softwareentwicklung/), [Übung 1](https://github.com/hsro-wif-prg2/tutorial), [Übung 2](https://github.com/hsro-wif-prg2/example))
 	
 	Nach ein paar organisatorischen Dingen widmen wir uns dem Handwerkszeug professioneller Softwareentwicklung.
 	Wir wiederholen Spezifikation mit UML, Versionierung mit git, Tests und Ausnahmebehandlung.
