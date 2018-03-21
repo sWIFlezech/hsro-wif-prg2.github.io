@@ -3,7 +3,10 @@ email: korbinian.riedhammer@fh-rosenheim.de
 description: "Materialien zum Pflichtmodul Programmieren 2"
 baseurl: ""
 url: "https://hsro-wif-prg2.github.io"
-exclude: ["LICENSE", "Remarks.md"]
+exclude:
+  - "LICENSE"
+  - "Remarks.md"
+  - "*.plantuml"
 github_username: ["sikoried"]
 
 # Build settings

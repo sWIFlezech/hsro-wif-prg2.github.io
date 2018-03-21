@@ -1,0 +1,56 @@
+@startuml klassendiagramm
+
+class Steuersatz {
+	+static double steuersatz(int i)
+}
+
+class Ware {
+	-String name
+	-int priceInCent
+	-int steuersatz
+
+	+Ware(String name, int priceInCent, int steuersatz)
+	+int price()
+	+int priceTaxed()
+	+int tax()
+	+String toString()
+}
+
+class Warenkorb {
+	-Ware[] waren;
+	
+	+Warenkorb(Ware[] waren)
+	+int price()
+	+int tax()
+	+int priceTaxed()
+	+boolean qualifiesFreeShipping()
+	+String toString()
+}
+
+Steuersatz ... Ware
+Warenkorb o-- Ware
+
+@enduml
+
+@startuml objektdiagramm
+
+object stift1 {
+	name = "Stift 1"
+	priceInCent = 100
+	steuerSatz = 0
+}
+
+object stift2 {
+	name = "Stift 2"
+	priceInCent = 100
+	steuerSatz = 1
+}
+
+object warenkorb1 {
+	waren = [stift1, stift2]
+}
+
+warenkorb1 o-- stift1
+warenkorb1 o-- stift2
+
+@enduml
