@@ -16,11 +16,11 @@
 - 3/28
 	+ Wiederholung: Arrays
 	+ Arraylist: reallokiert und verblockt
-	+ Interfaces, innere Klassen
+	+ Interfaces
 	+ LinkedList: toString, add, get, remove
 	+ Übung: Stack
 - 4/4
-	+ Set für ints; beginne 1:1 mit LinkedList
+	+ Set für ints; beginne 1:1 mit LinkedList; refactor for inner class
 	+ Binärbaum: contains, add, remove (via add-left-right)
 	+ Exkurs: Rekursion für `toString`
 	+ Übung: Set von Strings (`compareTo()`)

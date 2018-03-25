@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="127px" preserveAspectRatio="none" style="width:428px;height:127px;" version="1.1" viewBox="0 0 428 127" width="428px" zoomAndPan="magnify"><defs><filter height="300%" id="f1y2nmjv5gwzw5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class IntList--><rect fill="#FEFECE" filter="url(#f1y2nmjv5gwzw5)" height="48" id="IntList" style="stroke: #A80036; stroke-width: 1.5;" width="65" x="6" y="56"/><ellipse cx="21" cy="72" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M16.9277,67.7651 L16.9277,65.6069 L24.3071,65.6069 L24.3071,67.7651 L21.8418,67.7651 L21.8418,75.8418 L24.3071,75.8418 L24.3071,78 L16.9277,78 L16.9277,75.8418 L19.3931,75.8418 L19.3931,67.7651 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="33" x="35" y="76.5352">IntList</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="70" y1="88" y2="88"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="70" y1="96" y2="96"/><!--class LinkedIntList--><rect fill="#FEFECE" filter="url(#f1y2nmjv5gwzw5)" height="60.9551" id="LinkedIntList" style="stroke: #A80036; stroke-width: 1.5;" width="114" x="131" y="49.5"/><ellipse cx="150.95" cy="65.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M153.9231,71.1431 Q153.3421,71.4419 152.7029,71.5913 Q152.0638,71.7407 151.3582,71.7407 Q148.8514,71.7407 147.5315,70.0889 Q146.2117,68.437 146.2117,65.3159 Q146.2117,62.1865 147.5315,60.5347 Q148.8514,58.8828 151.3582,58.8828 Q152.0638,58.8828 152.7112,59.0322 Q153.3587,59.1816 153.9231,59.4805 L153.9231,62.2031 Q153.2923,61.6221 152.6988,61.3523 Q152.1053,61.0825 151.4744,61.0825 Q150.1297,61.0825 149.4449,62.1492 Q148.7601,63.2158 148.7601,65.3159 Q148.7601,67.4077 149.4449,68.4744 Q150.1297,69.541 151.4744,69.541 Q152.1053,69.541 152.6988,69.2712 Q153.2923,69.0015 153.9231,68.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="166.05" y="70.0352">LinkedIntList</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="132" x2="244" y1="81.5" y2="81.5"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="139" y="90.4775"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="151" y="96.1348">head: IntElement</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="132" x2="244" y1="102.4551" y2="102.4551"/><!--class IntElement--><rect fill="#FEFECE" filter="url(#f1y2nmjv5gwzw5)" height="73.9102" id="IntElement" style="stroke: #A80036; stroke-width: 1.5;" width="112" x="305" y="43"/><ellipse cx="329" cy="59" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M331.9731,64.6431 Q331.3921,64.9419 330.7529,65.0913 Q330.1138,65.2407 329.4082,65.2407 Q326.9014,65.2407 325.5815,63.5889 Q324.2617,61.937 324.2617,58.8159 Q324.2617,55.6865 325.5815,54.0347 Q326.9014,52.3828 329.4082,52.3828 Q330.1138,52.3828 330.7612,52.5322 Q331.4087,52.6816 331.9731,52.9805 L331.9731,55.7031 Q331.3423,55.1221 330.7488,54.8523 Q330.1553,54.5825 329.5244,54.5825 Q328.1797,54.5825 327.4949,55.6492 Q326.8101,56.7158 326.8101,58.8159 Q326.8101,60.9077 327.4949,61.9744 Q328.1797,63.041 329.5244,63.041 Q330.1553,63.041 330.7488,62.7712 Q331.3423,62.5015 331.9731,61.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="345" y="63.5352">IntElement</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="306" x2="416" y1="75" y2="75"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="313" y="83.9775"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="48" x="325" y="89.6348">value: int</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="313" y="96.9326"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="86" x="325" y="102.5898">next: IntElement</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="306" x2="416" y1="108.9102" y2="108.9102"/><!--link IntList to LinkedIntList--><path d="M91.5733,80 C104.3042,80 117.9533,80 130.8597,80 " fill="none" id="IntList-LinkedIntList" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="91.3084,86.9999,71.3084,80,91.3084,72.9999,91.3084,86.9999" style="stroke: #A80036; stroke-width: 1.0;"/><!--link LinkedIntList to IntElement--><path d="M258.456,80 C273.8902,80 290.0307,80 304.8179,80 " fill="none" id="LinkedIntList-IntElement" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="245.1261,80,251.1261,84,257.1261,80,251.1261,76,245.1261,80" style="stroke: #A80036; stroke-width: 1.0;"/><!--link IntElement to IntElement--><path d="M329.2229,29.6987 C331.5112,17.2697 342.1035,8 361,8 C386.1953,8 396.6277,24.4795 392.2973,42.9545 " fill="none" id="IntElement-IntElement" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="329.7027,42.9545,333.483,36.8137,329.2685,30.9624,325.4882,37.1032,329.7027,42.9545" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml klassendiagramm2
+left to right direction
+
+interface IntList {
+	
+}
+
+class LinkedIntList implements IntList {
+	- head: IntElement
+}
+
+class IntElement {
+	- value: int
+	- next: IntElement
+}
+
+LinkedIntList o- - IntElement
+IntElement o- - IntElement
+
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_144-b01
+Operating System: Mac OS X
+OS Version: 10.13.3
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

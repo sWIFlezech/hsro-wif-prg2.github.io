@@ -1,3 +1,8 @@
+package ch01;
+
+import ch01.Steuersatz;
+import ch01.Ware;
+import ch01.Warenkorb;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;

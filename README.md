@@ -39,7 +39,7 @@ Der Leistungsnachweis ist aufgeteilt in eine
 	Nach ein paar organisatorischen Dingen widmen wir uns dem Handwerkszeug professioneller Softwareentwicklung.
 	Wir wiederholen Spezifikation mit UML, Versionierung mit git, Tests und Ausnahmebehandlung.
 
-- **28. März: Liste als sequenzielle Datenstruktur**
+- **28. März: Liste als sequenzielle Datenstruktur** ([Skript](02-linked-list/), [Übung](https://github.com/hsro-wif-prg2/uebung01))
 
 	Bisher haben wir größere Mengen von gleichen Objekten in Feldern (Arrays) gespeichert, welche aber in ihrer Größe in Java unveränderlich sind.
 	Wir erarbeiten uns nun mit Hilfe von Objektorientierung eine dynamische Datenstruktur, welche nach Bedarf wachsen und schrumpfen kann, und so Daten effizient verwaltet.

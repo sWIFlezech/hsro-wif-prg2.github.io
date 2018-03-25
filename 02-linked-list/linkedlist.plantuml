@@ -1,0 +1,121 @@
+@startuml realisierung
+
+left to right direction
+
+interface IntList {
+	get(i: int): int
+	put(i: int, v: int)
+	add(v: int)
+	remove(i: int)
+}
+
+class IntListImpl1 implements IntList {
+	+get(i: int): int
+	+pub(i: int, v: int)
+	+add(v: int)
+	+remove(i: int)
+}
+
+@enduml
+
+@startuml objektdiagramm
+left to right direction
+
+object zug {
+	kopf = erster_waggon
+}
+
+zug --> erster_waggon
+
+object erster_waggon {
+	ladung = 11
+	naechster = zweiter_waggon
+}
+
+erster_waggon --> zweiter_waggon
+
+object zweiter_waggon {
+	ladung = 22
+	naechster = dritter_waggon
+}
+
+zweiter_waggon --> dritter_waggon
+
+object dritter_waggon {
+	ladung = 33
+	naechster = null
+}
+
+@enduml
+
+@startuml klassendiagramm
+left to right direction
+
+interface IntList {
+	
+}
+
+class Zug implements IntList {
+	- kopf: Waggon	
+}
+
+class Waggon {
+	- ladung: int
+	- naechster: Waggon
+}
+
+Zug o-- Waggon
+Waggon o-- Waggon
+
+@enduml
+
+@startuml klassendiagramm2
+left to right direction
+
+interface IntList {
+	
+}
+
+class LinkedIntList implements IntList {
+	- head: IntElement
+}
+
+class IntElement {
+	- value: int
+	- next: IntElement
+}
+
+LinkedIntList o-- IntElement
+IntElement o-- IntElement
+
+@enduml
+
+@startuml objektdiagramm2
+left to right direction
+
+object zug {
+	kopf = erster_waggon
+}
+
+zug --> erster_waggon
+
+object erster_waggon {
+	ladung = 11
+	naechster = zweiter_waggon
+}
+
+erster_waggon --> dritter_waggon
+
+object zweiter_waggon {
+	ladung = 22
+	naechster = dritter_waggon
+}
+
+zweiter_waggon -> dritter_waggon
+
+object dritter_waggon {
+	ladung = 33
+	naechster = null
+}
+
+@enduml

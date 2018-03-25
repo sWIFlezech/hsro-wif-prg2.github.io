@@ -1,3 +1,5 @@
+package ch01;
+
 public class Ware {
 	private String name;
 	private int priceInCent;
