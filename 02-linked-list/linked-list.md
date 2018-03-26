@@ -69,7 +69,7 @@ interface IntList {
 	int get(int i);
 	void put(int i, int v);
 
-	// die Länge betreffend (höhö):
+	// die Listenlänge betreffend
 	void add(int v);
 	void remove(int i);
 
@@ -382,6 +382,6 @@ public int length() {
 
 - **Felder** (Arrays) haben zwar schnellen Lese- und Schreibzugriff, sind aber auf Grund Ihrer unveränderlichen Größe nicht geeignet für variable Datenmengen oder Einfüge- und Löschoperationen
 - Eine **arraybasierte Liste** mit blockweiser Allokierung kann sinnvoll sein, wenn vor allem angehängt, gelesen und geschrieben wird.
-- Eine **verkettete Liste** hat zwar einen langsameren Lesezugriff, kann dafür aber sehr effizient einfügen, anhängen und entfernen; damit eignet sie sich vor allem für Datenverarbeitung, bei der Datenstroeme sequenziell verarbeitet werden und die Anzahl der zu erwartenden Elemente unbekannt ist
+- Eine **verkettete Liste** hat zwar einen langsameren Lesezugriff, kann dafür aber sehr effizient einfügen, anhängen und entfernen; damit eignet sie sich vor allem für Datenverarbeitung, bei der Datenströme sequenziell verarbeitet werden und die Anzahl der zu erwartenden Elemente unbekannt ist.
 - Das **Arbeiten mit Interfaces** (Schnittstellen) stellt sicher, dass die darunterliegende Implementierung jederzeit getauscht werden kann.
 	Bei Entwicklung im Team können so Verantwortungen klar aufgeteilt werden.
