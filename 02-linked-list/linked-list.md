@@ -8,18 +8,18 @@ permalink: /02-linked-list/
 ## Wiederholung: Felder
 
 Letztes Semester hatten wir Felder (Arrays) kennengelernt (Syntaxelement `[]`) um mehrere Objekte eines Typs abzuspeichern.
-Felder können sowohl für _primitive Datentypen_ als auch für _Referenzdatentypen_ (also Objekte von Klassen) erstellt werden.
-Wichtig ist dabei, dass die Größe beim erstellen entweder explizit angegeben werden muss, oder durch eine Initialisierung vorgegeben ist.
+Felder können sowohl für _primitive Datentypen_ als auch für _Referenzdatentypen_ (also Objekte von Klassen, bspw. Instanzen von  _Auto_) erstellt werden.
+Wichtig ist dabei, dass die Größe beim Erstellen entweder explizit angegeben werden muss oder durch eine Initialisierung vorgegeben ist.
 
 ```java
-// vier Arten ein Feld von 3 int-Werten zu erzeugen:
+// vier Arten ein Feld mit 3 int-Werten darin zu erzeugen:
 int[] zs1 = {1, 2, 3};
 int zs2[] = {1, 2, 3};
 int[] zs3 = new int [] {1, 2, 3}
 int[] zs4 = new int [3];
 
 
-System.out.println(zs1.length);  // "3"
+System.out.println(zs1.length);  // Ausgabe in der Kommandozeile: "3"
 System.out.println(zs2.length);  // "3"
 System.out.println(zs3.length);  // "3"
 System.out.println(zs4.length);  // "3"
@@ -35,7 +35,7 @@ Eine Sonderrolle nimmt die `for-each` Schleife ein, hierbei übernimmt die JVM d
 ```java
 int[] zs = new int [3];
 zs[1] = 1337;
-zs[2] = zs[1] - zs[0];
+zs[2] = zs[0] - zs[1];
 
 for (int i = 0; i < zs.length; i++)
 	System.out.orintln(zs[i]);  // "0 1337 -1337"
@@ -57,10 +57,10 @@ Nutzer sollten hier im Prinzip endlos lange Texteingaben machen können.
 
 Wir brauchen also eine Datenstruktur, welche je nach Bedarf wachsen (und schrumpfen) kann, also eine _Liste_.
 Letzte Woche haben wir noch einmal die Grundzüge objektorientierter Programmierung (OOP) wiederholt.
-Ein weiterer wichtiges Werkzeug der OOP ist die Definition von Schnittstellen, sog. _Interfaces_.
+Ein weiteres wichtiges Werkzeug der OOP ist die Definition von Schnittstellen, sog. _Interfaces_.  
 Ein Interface ist ähnlich zu einer Klasse, doch enthält es (im Regelfall) keine Implementierung sondern nur die Methodendefinitionen.
 
-Bleiben wir bei der Liste; diese sollte ein paar grundlegende Operationen beherrschen: das Lesen oder Schreiben von Objekten ab bestimmter Stelle (analog zum Array), sowie das Anhängen und Entfernen von Elementen.
+Bleiben wir bei der Liste; diese sollte ein paar grundlegende Operationen beherrschen: das Lesen oder Schreiben von Objekten ab bestimmter Stelle (analog zum Array), sowie das Anhängen und Entfernen von Elementen.  
 In Java können solche Schnittstellen mit dem Schlüsselwort `interface` definiert werden:
 
 ```java
@@ -69,7 +69,7 @@ interface IntList {
 	int get(int i);
 	void put(int i, int v);
 
-	// die Länge betreffend:
+	// die Länge betreffend (höhö):
 	void add(int v);
 	void remove(int i);
 
@@ -77,7 +77,7 @@ interface IntList {
 }
 ```
 
-Wichtig ist hierbei, dass die Methoden des Interfaces _keine_ Implementierung haben -- die Methodendefinition endet nach der Signatur mit einem Strichpunkt.
+Wichtig ist hierbei, dass die Methoden des Interfaces _keine_ Implementierung haben -- die Methodendefinition endet nach der Signatur mit einem Strichpunkt.  
 Der Hauptvorteil von Schnittstellen ist es, dass diese ohne Wissen über ihre _Implementierung_ verwendet werden können:
 
 ```java
@@ -130,7 +130,7 @@ Wir stellen fest:
 
 - Wird eine Liste neu erstellt (Konstruktor), so enthält sie keine Elemente, das Array ist also leer.
 - Der lesende bzw. schreibende Zugriff kann direkt auf das Array erfolgen.
-- Das Anhängen bzw. entfernen ist komplizierter, da hier das Array verändert werden müsste: man erstellt also ein neues Array welches eins länger bzw. kürzer ist, und kopiert die Elemente entsprechend.
+- Das Anhängen bzw. Entfernen ist komplizierter, da hier das Array verändert werden müsste: man erstellt also ein neues Array welches eins länger bzw. kürzer ist, und kopiert die Elemente entsprechend.
 
 
 ```java
@@ -188,36 +188,36 @@ Ist das Array voll, so wird neues allokiert, welches um `BS` größer ist.
 public class IntListImpl2 implements IntList {
 	public static final int BS = 4;  // Blockgröße
 	private int[] zs = new int [BS];
-	private int l = 0;  // wie viele Felder belegt?
+	private int len = 0;  // wie viele Felder belegt?
 
 	public int get(int i) {
-		if (i >= l) throw new ArrayIndexOutOfBoundsException();
+		if (i >= len) throw new ArrayIndexOutOfBoundsException();
 		return zs[i];
 	}
 	public void put(int i, int v) {
-		if (i >= l) throw new ArrayIndexOutOfBoundsException();
+		if (i >= len) throw new ArrayIndexOutOfBoundsException();
 		zs[i] = v;
 	}
 	public void add(int v) {
 		if (l < zs.length) {
-			zs[l++] = v;  // mitzaehlen!
+			zs[len++] = v;  // mitzaehlen!
 			return;
 		}
 		int[] neu = new int [zs.length + BS];
 		System.arraycopy(zs, 0, neu, 0, zs.length);
-		neu[l++] = v;  // weiterzaehlen!
+		neu[len++] = v;  // weiterzaehlen!
 		zs = neu;
 	}
 	public int remove(int i) {
 		int r = zs[i];
 		// ab i alle eins nach links schieben
-		for (int j = i+1; j < l; ++j)
+		for (int j = i+1; j < len; j++)
 			zs[j-1] = zs[j];
 		l--;  // mitzaehlen!
 		return r;
 	}
 	public int length() {
-		return l;
+		return len;
 	}
 }
 ```
@@ -257,12 +257,12 @@ Wir suchen also zunächst eine Klasse, welche die Lok darstellt, sowie eine Klas
 {: .figcenter}
 
 Ein Zug ist also eine Verkettung von Waggons.
-Da nun nicht alle [Nerds Zugfans](https://www.youtube.com/watch?v=jCNrs23r4DA) sind, abstrahieren wir zur _verketteten Liste_:
+Da nun nicht alle [Nerds Zugfans](https://www.youtube.com/watch?v=jCNrs23r4DA) sind oder [Züge allgemein mögen](https://www.youtube.com/watch?v=5DjOL2we8ko), abstrahieren wir zur _verketteten Liste_:
 
 ![Klassendiagramm 2]({{site.baseurl}}/02-linked-list/klassendiagramm2.svg)
 {: .figcenter}
 
-Wir brauchen also die Klassen `IntElement` und `LinkedIntList`, wobei letztere das Interface `IntList` implementiert:
+Wir brauchen also die Klassen `IntElement` und `LinkedIntList`, wobei Letztere das Interface `IntList` implementiert:
 
 ```java
 class IntElement {
@@ -281,7 +281,7 @@ class IntListImpl3 implements IntList {
 }
 ```
 
-Um nun ein Element anzuhängen, müssen wir zunächst prüfen ob _überhaupt_ schon ein Element angehängt ist.
+Um nun ein Element anzuhängen, müssen wir zunächst  prüfen ob _überhaupt_ schon ein _irgendein_ Element angehängt ist.   
 Ist das der Fall, so müssen wir uns bis an das Ende der Liste hangeln, indem wir jeweils zum Nachfolger (`next`) gehen bevor wir anhängen:
 
 ```java
@@ -292,7 +292,7 @@ public void add(int v) {
 		return;
 	}
 
-	// "laufe" bis zum Ende, d.g. bis it.next == null!
+	// "laufe" bis zum Ende, d.h. bis it.next == null!
 	IntElement it = head;
 	while (it.next != null)
 		it = it.next;
@@ -334,7 +334,7 @@ Hierbei wird im Endeffekt nicht gelöscht, sondern ein Element durch ändern der
 ![Objektdiagramm]({{site.baseurl}}/02-linked-list/objektdiagramm.svg)
 {: .figcenter}
 
-Die Verzeigerung wird nun verändert:
+Die Verlinkung wird nun verändert:
 
 ![Objektdiagramm 2]({{site.baseurl}}/02-linked-list/objektdiagramm2.svg)
 {: .figcenter}
@@ -354,7 +354,7 @@ public int remove(int i) {
 	while (--i > 0)
 		it = it.next;
 
-	// Verzeigerung ändern, so dass das zu entfernende 
+	// Verlinkung ändern, sodass das zu entfernende Element
 	// nicht mehr erreichbar ist
 	IntElement rem = it.next;
 	it.next = rem.next;
@@ -381,7 +381,7 @@ public int length() {
 ## Zusammenfassung
 
 - **Felder** (Arrays) haben zwar schnellen Lese- und Schreibzugriff, sind aber auf Grund Ihrer unveränderlichen Größe nicht geeignet für variable Datenmengen oder Einfüge- und Löschoperationen
-- Eine **arraybasierte Liste** mit blockweiser Allokierung kann sinnvoll sein, wenn vorallem angehängt, gelesen und geschrieben wird.
-- Eine **verkettete Liste** hat zwar einen langsameren Lesezugriff, kann dafür aber sehr effizient einfügen, anhängen und entfernen; damit eignet sie sich vor allem für Datenverarbeitung, bei der 
+- Eine **arraybasierte Liste** mit blockweiser Allokierung kann sinnvoll sein, wenn vor allem angehängt, gelesen und geschrieben wird.
+- Eine **verkettete Liste** hat zwar einen langsameren Lesezugriff, kann dafür aber sehr effizient einfügen, anhängen und entfernen; damit eignet sie sich vor allem für Datenverarbeitung, bei der Datenstroeme sequenziell verarbeitet werden und die Anzahl der zu erwartenden Elemente unbekannt ist
 - Das **Arbeiten mit Interfaces** (Schnittstellen) stellt sicher, dass die darunterliegende Implementierung jederzeit getauscht werden kann.
 	Bei Entwicklung im Team können so Verantwortungen klar aufgeteilt werden.
