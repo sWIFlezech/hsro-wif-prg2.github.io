@@ -91,7 +91,7 @@ System.out.println(li.length()); // 3
 System.out.println(li.get(1));   // "22"
 li.put(2, 44);  // li: [11, 22, 44]
 li.remove(1);   // li: [11, 44]
-System.out.println(li.get(2));   // "44"
+System.out.println(li.get(1));   // "44"
 ```
 
 
