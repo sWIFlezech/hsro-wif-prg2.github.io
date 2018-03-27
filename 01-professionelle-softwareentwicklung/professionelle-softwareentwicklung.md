@@ -8,16 +8,16 @@ permalink: /01-professionelle-softwareentwicklung/
 ## Modellierung mit UML
 
 Wir beginnen mit einem kleinen Beispiel.
-Für ein Webshopsystem brauchen wir zunächst _Waren_, welche einen Namen, Preis und Steuersatz (z.B. 19% oder ermäßigt 7%).
+Für ein Webshopsystem brauchen wir zunächst _Waren_, welche einen Namen, Preis und Steuersatz (z.B. 19% oder ermäßigt 7%) haben.
 Waren werden dann einem _Warenkorb_ hinzugefügt.
 
 Ein entsprechendes _Objektdiagramm_ könnte wie folgt aussehen:
 
 ![Objektdiagramm]({{site.baseurl}}/01-professionelle-softwareentwicklung/objektdiagramm.svg)
 
-Wobei der Pfeil mit der leeren Raute eine _Aggregation_ darstellt: Das Objekt `warenkorb1` besteht aus den Objekten `stift1` und `stift2`.
+Wobei der Pfeil mit der leeren Raute eine _Aggregation_ darstellt: Das Objekt `warenkorb1` enthält die Objekte `stift1` und `stift2`.
 
-> Hinweis: Eine __Komposition__ wird durch einen Pfeil mit ausgefüllter Raute dargestellt; im Unterschied zur Aggregation zeigt diese an, dass ein Objekt nicht ohne seine Teile bestehen kann.
+> Hinweis: Eine __Komposition__ wird durch einen Pfeil mit ausgefüllter Raute dargestellt; im Unterschied zur Aggregation zeigt diese an, dass ein Objekt nicht ohne seine Teile bestehen kann. Der Warenkorb würde in diesem Fall aus den Stiften bestehen, statt sie nur zu enthalten.
 
 Möchte man diese kleine Modellwelt in einer objektorientierten Sprache wie Java implementieren, so abstrahiert man das Diagramm in ein _Klassendiagramm_.
 
@@ -134,7 +134,7 @@ Es gibt verschiedene Möglichkeiten und Toolkits um dieses zu vereinfachen bzw. 
 Dabei werden die Testdateien oft in gesonderten Verzeichnissen geführt, da diese nicht zum Kunden ausgeliefert werden.
 So wird der Anwendungscode i.d.R. unter `src/main/java` abgelegt, Testcode aber unter `src/test/java`.
 
-Eine Test in JUnit ist eine Klasse mit speziell annotierten Methoden, hier ein Beispiel:
+Ein Test in JUnit ist eine Klasse mit speziell annotierten Methoden, hier ein Beispiel:
 
 ```java
 public class SteuersatzTests {
@@ -162,8 +162,8 @@ public class SteuersatzTests {
 
 Der Testtreiber (z.B. IntelliJ oder Gradle) führt nun alle mit `@Test` annotierten Methoden als einzelne Testcases durch.
 
-JUnit liefert Hilfsmethoden an, welche das Testen erleichtern.
-Da ein Großteil von Tests darauf beruht, dass Software bei bestimmter Eingabe eine bestimmte Ausgabe produziert, gibt es in der Klasse `Assertions` eine Liste an Hilfsmethoden, um erwartetes Verhalten zu prüfen.
+JUnit liefert Hilfsmethoden, welche das Testen erleichtern.
+Da ein Großteil von Tests darauf beruht, dass Software bei bestimmter Eingabe eine bestimmte Ausgabe produziert, gibt es in der Klasse `Assertions` - eine Liste an Hilfsmethoden, um erwartetes Verhalten zu prüfen.
 
 `Assertions.assertEquals(0.19, Steuersatz.steuersatz(0))` prüft also, dass der Rückgabewert von `Steuersatz.steuersatz(0)` gleich `0.19` ist.
 
@@ -187,11 +187,11 @@ Assertions.assertThrows(IllegalArgumentException.class,
 
 ### Begrifflichkeit
 
-Man spricht bei einfachen Tests, welche eine Klasse oder Methode isoliert (oder im einfachen Zusammenspiel) betrachten von _Unittests_.
+Man spricht bei einfachen Tests, welche eine Klasse oder Methode isolieren (oder einfaches Zusammenspiel betrachten) von _Unittests_.
 Sie stellen "im Kleinen" sicher, dass die Komponenten das tun, was sie sollen.
 
 Wird die Software (oder wesentliche Teile davon) im Gesamten gestestet, so spricht man von _Integrationstests_ (_integration tests_).
-Diese stellen nun sicher, dass die einzelnen bereits getesteten Komponenten auch korrekt ineinandergreifen, so dass die Software das gewünschte Ergebnis liefert.
+Diese stellen nun sicher, dass die einzelnen bereits getesteten Komponenten auch korrekt ineinandergreifen, sodass die Software das gewünschte Ergebnis liefert.
 
 
 ## Versionierung mit Git
@@ -201,10 +201,10 @@ Die wesentlichen Elemente professioneller Softwareentwicklung sind also
 - Modellierung des Problems, im Idealfall _vor_ dem Beginn der Implementierung.
 	Die Modellierung basiert auf der Problemstellung und der daraus erfolgten Spezifikation.
 - Implementierung der Funktionalität.
-- Implementierung von Tests um die Funktionalität zu testen.
+- Implementierung von Tests, um die Funktionalität zu testen.
 
 
-Nun ist es aber so, dass oft mehrere Entwickler an einem Projekt arbeiten, und weiterhin man zu Sicherungs- und Dokumentationszwecken in regelmäßigen Abständen Sicherungspunkte (snapshots) anlegen sollte.
+Nun ist es aber so, dass oft mehrere Entwickler an einem Projekt arbeiten und weiterhin man zu Sicherungs- und Dokumentationszwecken in regelmäßigen Abständen Sicherungspunkte (snapshots) anlegen sollte.
 
 Die Versionierungssoftware Git hilft hierbei.
 Vereinfacht gesehen soll es einen Hauptbestand des Quellcodes geben (`master`), und neue Features sollen dann jeweils in separaten _Branches_ implementiert werden.
