@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="138px" preserveAspectRatio="none" style="width:834px;height:138px;" version="1.1" viewBox="0 0 834 138" width="834px" zoomAndPan="magnify"><defs><filter height="300%" id="f1bw9l2rn9s9l7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity User--><ellipse cx="21.5" cy="50.5" fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M21.5,58.5 L21.5,85.5 M8.5,66.5 L34.5,66.5 M21.5,85.5 L8.5,100.5 M21.5,85.5 L34.5,100.5 " fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="6" y="121.0352">User</text><rect fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" height="37.9102" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="277" y="63"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="33" x="286.5" y="76.6016">baum</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="278" x2="328" y1="81.1328" y2="81.1328"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="40" x="283" y="94.8008">root = 4</text><rect fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" height="49.6875" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="417" y="57"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="8" x="446.5" y="70.6016">4</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="418" x2="483" y1="75.1328" y2="75.1328"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="37" x="423" y="88.8008">left = 2</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="55" x="423" y="100.5781">right = null</text><rect fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" height="49.6875" style="stroke: #A80036; stroke-width: 1.5;" width="61" x="612" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="8" x="638.5" y="21.6016">2</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="613" x2="672" y1="26.1328" y2="26.1328"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="49" x="618" y="39.8008">left = null</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="43" x="618" y="51.5781">right = 3</text><rect fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" height="34.1328" style="stroke: #A80036; stroke-width: 1.5;" width="22" x="801" y="16"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="8" x="808" y="29.6016">3</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="802" x2="822" y1="34.1328" y2="34.1328"/><rect fill="#FEFECE" filter="url(#f1bw9l2rn9s9l7)" height="34.1328" style="stroke: #A80036; stroke-width: 1.5;" width="22" x="631.5" y="93"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="8" x="638.5" y="106.6016">6</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="632.5" x2="652.5" y1="111.1328" y2="111.1328"/><!--link User to baum--><path d="M37.0356,82 C81.6772,82 210.9748,82 271.3038,82 " fill="none" id="User-baum" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="276.5735,82,267.5735,78,271.5735,82,267.5735,86,276.5735,82" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="54" x="130" y="78.5684">is.add(6)</text><!--link baum to 4--><path d="M329.0305,82 C351.9808,82 385.7357,82 411.8413,82 " fill="none" id="baum-4" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="416.955,82,407.955,78,411.955,82,407.955,86,416.955,82" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="360" y="78.5684">root</text><!--link 2 to 3--><path d="M673.1952,33 C709.1494,33 767.3801,33 795.6119,33 " fill="none" id="2-3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="800.8428,33,791.8428,29,795.8428,33,791.8428,37,800.8428,33" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="704" y="29.5684">groesser 3</text><!--link 4 to 2--><path d="M484.3838,73.3526 C518.7577,64.5801 571.7517,51.0556 606.7734,42.1177 " fill="none" id="4-2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="611.8057,40.8334,602.0961,39.1832,606.961,42.0698,604.0744,46.9347,611.8057,40.8334" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="520.5" y="44.5684">kleiner 4</text><!--link 4 to 6--><path d="M484.0056,94.9182 C493.5606,98.0962 504.0739,101.1229 514,103 C553.7984,110.5263 601.6711,110.9034 626.2238,110.4825 " fill="none" id="4-6" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="631.3808,110.376,622.3001,106.5628,626.3819,110.4793,622.4654,114.5611,631.3808,110.376" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="515" y="99.5684">groesser 4</text><!--
+@startuml tree-od5
+left to right direction
+allow_mixing
+
+actor User
+
+object baum {
+	root = 4
+}
+
+User -..-> baum: "is.add(6)"
+
+object 4 {
+	left = 2
+	right = null
+}
+
+baum - -> 4 : root
+
+object 2 {
+	left = null
+	right = 3
+}
+
+object 3
+
+2 - -> 3 : "groesser 3"
+
+object 6
+
+4 - -> 2 : "kleiner 4"
+4 - -> 6 : "groesser 4"
+
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_144-b01
+Operating System: Mac OS X
+OS Version: 10.13.3
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

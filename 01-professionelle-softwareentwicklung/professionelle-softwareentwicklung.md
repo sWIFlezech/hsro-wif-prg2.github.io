@@ -213,3 +213,6 @@ Ist ein Feature in einem Branch fertig gestellt, so wird es in `master` durch ei
 ![Gitflow]({{site.baseurl}}/01-professionelle-softwareentwicklung/cd-workflow-basic.png)
 
 Die erste Übung (<http://github.com/hsro-wif-prg2/tutorial>) beinhaltet ein kleines Tutorial zu Git, bitte machen Sie sich damit vertraut.
+
+
+<p style="text-align: right">&#8718;</p>

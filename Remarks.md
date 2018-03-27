@@ -43,7 +43,7 @@
 - 5/2
 	+ Iterator (und Factory)
 	+ Für Liste
-	+ Für Baum (-> Agenda)
+	+ Für Baum (-> Agenda); Beispiel fuer Loeschen von Elementen?
 	+ Übung: Iterator für Liste und Map; Wörter zählen
 - 5/9
 	+ Rekursion

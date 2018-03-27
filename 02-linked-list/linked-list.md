@@ -385,3 +385,6 @@ public int length() {
 - Eine **verkettete Liste** hat zwar einen langsameren Lesezugriff, kann dafür aber sehr effizient einfügen, anhängen und entfernen; damit eignet sie sich vor allem für Datenverarbeitung, bei der Datenströme sequenziell verarbeitet werden und die Anzahl der zu erwartenden Elemente unbekannt ist.
 - Das **Arbeiten mit Interfaces** (Schnittstellen) stellt sicher, dass die darunterliegende Implementierung jederzeit getauscht werden kann.
 	Bei Entwicklung im Team können so Verantwortungen klar aufgeteilt werden.
+
+
+<p style="text-align: right">&#8718;</p>

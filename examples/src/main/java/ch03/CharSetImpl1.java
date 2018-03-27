@@ -1,7 +1,9 @@
 package ch03;
 
-public class CharSetImpl implements CharSet {
-	private class Element {
+import java.util.NoSuchElementException;
+
+class CharSetImpl1 implements CharSet {
+	class Element {
 		char value;
 		Element next;
 		Element(char c, Element n) {
@@ -44,6 +46,42 @@ public class CharSetImpl implements CharSet {
 		}
 
 		it.next = new Element(c, null);
+	}
+
+	@Override
+	public char remove(char c) {
+		if (head.value == c) {
+			Element rem = head;
+			head = rem.next;
+			return rem.value;
+		}
+
+		// so lange eins vorausschauen bis Treffer
+		// oder Liste zu Ende
+		Element it = head;
+		while (it.next != null) {
+			if (it.next.value == c) {
+				Element rem = it.next;
+				it.next = rem.next;
+				return rem.value;
+			}
+			it = it.next;
+		}
+
+		// Element nicht gefunden!
+		throw new NoSuchElementException();
+	}
+
+	@Override
+	public int size() {
+		int len = 0;
+		Element it = head;
+		while (head != null) {
+			len++;
+			it = it.next;
+		}
+
+		return len;
 	}
 
 	@Override
