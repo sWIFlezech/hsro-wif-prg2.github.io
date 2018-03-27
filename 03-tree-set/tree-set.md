@@ -386,7 +386,8 @@ Die Baumstruktur ist also wesentlich effizienter!
 
 - Ein **Set** ist im Gegensatz zu einer Liste **frei von Duplikaten**; in der Regel werden `add`, `remove`, `contains` und `size` unterstützt.
 - Da ein **Set** eine **Menge ohne Ordnung** (Reihenfolge) ist, gibt es keinen Zugriff über den Index.
-- Ein Set kann zwar mit einer Liste implementiert werden, ein **Binärbaum ist aber deutlich effizienter**.
+- Ein **Binärbaum** ist eine Datenstruktur, bei der Elemente **zwei** Nachfolger haben; in diesen **Teilbäumen** sind dann die kleineren und größeren Elemente gespeichert.
+- Ein Set kann zwar mit einer Liste implementiert werden, ein Binärbaum ist aber **deutlich effizienter**.
 - Bei komplizierter Struktur kann **Rekursion** oft eine elegante Lösung sein; hierbei ruft eine Methode sich selbst wieder auf.
 
 
