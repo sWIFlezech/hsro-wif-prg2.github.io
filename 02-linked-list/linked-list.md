@@ -181,7 +181,7 @@ Die oben gezeigte Implementierung hat eine entscheidende Schwäche: Je länger d
 
 Diesem kann man zumindest teilweise entgegenwirken, in dem man das Array _blockweise_ allokiert (und bei Bedarf auch wieder freigibt).
 
-Dazu führen wir eine Blockgröße (hier: Konstante `BS`) ein, sowie einen Zähler (hier: `l`), wie weit das Array tatsächlich gefüllt ist.
+Dazu führen wir eine Blockgröße (hier: Konstante `BS`) ein, sowie einen Zähler (hier: `len`), wie weit das Array tatsächlich gefüllt ist.
 Ist das Array voll, so wird neues allokiert, welches um `BS` größer ist.
 
 ```java
@@ -199,7 +199,7 @@ public class IntListImpl2 implements IntList {
 		zs[i] = v;
 	}
 	public void add(int v) {
-		if (l < zs.length) {
+		if (len < zs.length) {
 			zs[len++] = v;  // mitzaehlen!
 			return;
 		}
@@ -213,7 +213,7 @@ public class IntListImpl2 implements IntList {
 		// ab i alle eins nach links schieben
 		for (int j = i+1; j < len; j++)
 			zs[j-1] = zs[j];
-		l--;  // mitzaehlen!
+		len--;  // mitzaehlen!
 		return r;
 	}
 	public int length() {
