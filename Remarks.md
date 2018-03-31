@@ -21,7 +21,7 @@
 	+ Übung: Stack
 - 4/4
 	+ Set für ints; beginne 1:1 mit LinkedList; refactor for inner class
-	+ Binärbaum: contains, add, remove (via add-left-right)
+	+ Binärbaum: contains, add; remove!?
 	+ Exkurs: Rekursion für `toString`
 	+ Übung: Set von Strings (`compareTo()`)
 - 4/11

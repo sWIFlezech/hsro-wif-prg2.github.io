@@ -57,7 +57,8 @@ interface CharSet {
 
 ## Innere Klassen
 
-Wenn wir dieses nun analog zur Liste implementieren, so könnte das so aussehen:
+Wenn wir dieses nun analog zur Liste implementieren, so brauchen wir wieder eine Hilfsklasse, welche die eigentlichen Daten speichert, und die Datenstruktur aufspannt.
+Da diese Klasse spezifisch für diese Struktur und Implementierung ist, kann diese als _innere_ Klasse angelegt werden:
 
 ```java
 class CharSetImpl1 implements CharSet {
@@ -75,7 +76,6 @@ class CharSetImpl1 implements CharSet {
 }
 ```
 
-Man beachte: Hier ist die Klasse `Element` als _innere_ Klasse angelegt.
 Innere Klassen sind in Java...
 
 - sinnvoll, wenn sie nur innerhalb einer Klasse, also lokal verwendet werden.
@@ -364,13 +364,118 @@ class CharSetImpl2 implements CharSet {
 }
 ```
 
-> Hinweis: Rekursion wird hier nur als Exkurs behandelt, 
+> Hinweis: Rekursion wird hier nur als Exkurs behandelt, wir kommen gegen Ende des Semesters nochmal im Detail dazu.
+
+
+## Löschen von Elementen
+
+Bei der Liste war das Löschen eines Elementes einfach: Zunächst schaut man immer ein Element voraus, um das zu löschende Element zu finden; man bleibt also ein Element davor stehen.
+Das eigentliche Löschen wird dadurch erreicht, in dem man nun die Verlinkung so ändert, dass das Element _vor_ dem zu löschenden auf das Element _hinter_ dem zu löschenden zeigt.
+
+Möchte man nun ein Element aus dem Set bzw. Baum löschen, ist das etwas komplizierter, da man beim Suchen ja rechts und links betrachten muss, analog zu `contains`.
+
+Wir brechen dieses schwierige Problem in einfachere Teilprobleme auf.
+Zunächst gibt es drei Fälle zu betrachten:
+
+1. Der Baum ist bereits leer; hier sollte eine `NoSuchElementException` geworfen werden.
+2. Das zu löschende Element ist das Wurzelelement `root`
+3. Das zu löschende Element ist ein innerer Knoten oder Blatt.
+
+Ist 1. trivial, so sehen wir bei 2. und 3. zumindest eine Gemeinsamkeit: Löschen wir ein Element, so müssen wir sicherstellen, dass etwaige Teilbäume (`left` und `right`) wieder in den Baum eingefügt werden.
+Hierzu erstellt man eine Hilfsmethode `addElement`, welche analog zur bestehenden `add` Methode arbeitet, aber eben gleich statt einem _Wert_ ein Element (mit etwaigen Teilbäumen) einfügt.
+
+Es verbleibt noch die Unterscheidung, ob man das Wurzelelement löschen möchte (2.) oder ein Inneres (3.). 
+Eine mögliche `remove` Implementierung könnte also wie folgt vorgehen:
+
+
+```java
+public char remove(char c) {
+	// Trivialfall prüfen
+	if (root == null)
+		throw new NoSuchElementException();
+
+	// Spezialfall: Wurzelelement loeschen; delegieren
+	if (root.value == c)
+		return removeRoot();
+
+	// Am Wurzelknoten beginnen
+	Element it = root;
+	while (it != null) {
+		if (c < it.value) {
+			// ist der gesuchte Wert kleiner, so müssen
+			// wir nach links schauen, und ggf. das linke
+			// Nachfolgeelement löschen; delegieren
+			if (it.left != null && it.left.value == c)
+				return removeElement(it, it.left);
+			it = it.left;
+		} else {
+			// rechts analog.
+			if (it.right != null && it.right.value == c)
+				return removeElement(it, it.right);
+			it = it.right;
+		}
+	}
+
+	throw new NoSuchElementException();
+}
+```
+
+Wir haben also zunächst die Grundstruktur des Algorithmus erarbeitet, welche das zu löschende Element zwar bestimmt, aber nicht (selbst) löscht (delegiert auf `removeRoot` bzw. `removeElement`)
+Möchte man nun das Wurzelelement `root` löschen (2.), so prüft man, ob und welche Teilbäume `left` bzw. `right` existieren:
+
+```java
+private char removeRoot() {
+	Element e = root;
+	if (e.left == null && root.right == null) {
+		// keine Teilbäume, also ist der Baum nun leer
+		root = null;
+	} else if (e.left == null) {
+		// nur rechter Teilbaum, also diesen als Wurzel setzen
+		root = e.right;
+	} else if (e.right == null) {
+		// dito, fuer finks
+		root = e.left;
+	} else {
+		// es gibt beide Teilbäume; links wird neue Wurzel,
+		// rechts wird als Element eingefügt.
+		root = e.left;
+		addElement(e.right);
+	}
+
+	// Wert des gelöschten Elements zurueck geben
+	return e.value;
+}
+```
+
+Ähnlich geht man bei inneren Elementen vor.
+Da der Baum hier aber nur in eine Richtung verlinkt ist, benötigen wir zum Löschen Referenzen auf das Elternelement und das zu löschende Element.
+Man setzt dann das zu löschende Element auf `null`, und fügt etwaige Teilbäume wieder neu ein.
+
+```java
+private char removeElement(Element parent, Element element) {
+	// wollen wir das linke Element löschen?
+	if (element == parent.left) {
+		parent.left = null;
+	} else {
+		parent.right = null;
+	}
+
+	// eventuelle Teilbäume neu in den Baum einfügen
+	addElement(e.left);
+	addElement(e.right);
+
+	return e.value;
+}
+```
+
+
+> Hinweis: Diese Implementierung der `remove` Funktion fuehrt dazu, dass der Baum schlecht konditioniert ist bzw. entartet; sie ist aber recht anschaulich zu erklären.
 
 
 ## Komplexität
 
-Warum nun das ganze Spektakel?
-Man kann mathematisch-kombinatorisch beweisen, dass der mittlere Aufwand (Komplexität) zum Suchen bzw. Einfügen in einen Binärbaum $O(\log n)$; ist der Baum balanciert (also die Verzweigung ausgewogen), so ist der Aufwand sogar im _worst case_ $O(\log n)$.
+Warum nun das ganze Spektakel mit dem Baum, wenn doch eine Liste so viel einfacher wäre?
+Man kann mathematisch-kombinatorisch beweisen, dass der mittlere Aufwand (Komplexität) zum Suchen bzw. Einfügen in einen Binärbaum $O(\log n)$ ist; ist der Baum _balanciert_ (also die Verzweigung ausgewogen), so ist der Aufwand sogar im _worst case_ $O(\log n)$.
 
 Wir erinnern uns an den Eingang dieses Kapitels: Die naive Implementierung eines Sets als Liste hatte die Komplexität $O(n)$.
 Das scheint beim Lesen nicht arg unterschiedlich, doch auch hier sagt ein Bild mehr als 1000 Worte:

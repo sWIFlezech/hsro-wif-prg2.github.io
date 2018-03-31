@@ -39,6 +39,6 @@ class CharSetTest {
 
 	@Test
 	void testCharSet2() {
-		testCharSet(new CharSetImpl2(), false);
+		testCharSet(new CharSetImpl2(), true);
 	}
 }
