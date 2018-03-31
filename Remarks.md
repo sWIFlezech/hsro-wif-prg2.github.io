@@ -21,7 +21,7 @@
 	+ Übung: Stack
 - 4/4
 	+ Set für ints; beginne 1:1 mit LinkedList; refactor for inner class
-	+ Binärbaum: contains, add, remove (via add-left-right)
+	+ Binärbaum: contains, add; remove!?
 	+ Exkurs: Rekursion für `toString`
 	+ Übung: Set von Strings (`compareTo()`)
 - 4/11
@@ -43,7 +43,7 @@
 - 5/2
 	+ Iterator (und Factory)
 	+ Für Liste
-	+ Für Baum (-> Agenda)
+	+ Für Baum (-> Agenda); Beispiel fuer Loeschen von Elementen?
 	+ Übung: Iterator für Liste und Map; Wörter zählen
 - 5/9
 	+ Rekursion

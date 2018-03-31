@@ -44,10 +44,11 @@ Der Leistungsnachweis ist aufgeteilt in eine
 	Bisher haben wir größere Mengen von gleichen Objekten in Feldern (Arrays) gespeichert, welche aber in ihrer Größe in Java unveränderlich sind.
 	Wir erarbeiten uns nun mit Hilfe von Objektorientierung eine dynamische Datenstruktur, welche nach Bedarf wachsen und schrumpfen kann, und so Daten effizient verwaltet.
 
-- **4. April: Set als Menge eindeutiger Elemente**
+- **4. April: Set als Menge eindeutiger Elemente** ([Skript](/03-tree-set/), [Übung](https://github.com/hsro-wif-prg2/uebung02))
 
-	Eine Liste speichert Daten sequenziell ab, und achtet dabei nicht auf Duplikate.
-	Ein _Set_ (aus dem engl. _set_: Menge, Gruppe) ist ein Containertyp, welcher der mathematischen Menge nachempfunden ist: jedes Element kann genau einmal vorkommen, und es gibt keine Reihenfolge; ein Element ist entweder enthalten, oder nicht.
+	Eine Liste speichert Daten sequenziell ab, achtet dabei aber nicht auf Duplikate.
+	Ein _Set_ (aus dem engl. _set:_ Menge, Gruppe) ist ein Containertyp, welcher der mathematischen Menge nachempfunden ist: jedes Element kann genau einmal vorkommen, und es gibt keine Ordnung (Reihenfolge); ein Element ist entweder enthalten oder nicht.
+	Zur Implementierung lernen wir den Binärbaum kennen, eine weitere wichtige Datenstruktur der Informatik.
 
 - **11. April: Generics**
 
