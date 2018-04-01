@@ -108,7 +108,7 @@ class CharSetImpl1 implements CharSet {
 }
 ```
 
-Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [DEAD_LINK_PLS_REVIVE](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/examples/src/main/java/ch03/CharListImpl1.java)).
+Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [Implementierung](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/lukas_kap3/examples/src/main/java/ch02/IntListImpl1.java)).
 
 
 ```java
