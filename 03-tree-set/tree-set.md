@@ -19,7 +19,7 @@ xs.add(3);
 System.out.println(xs); // Ausgabe: "[1, 3, 3]"
 ```
 
-Das Beispiel zeigt aber auch, dass Duplikate enthalten sein können -- was je nach Anwendung aber unerwünscht sein kann.
+Das Beispiel zeigt aber auch, dass Duplikate enthalten sein können -- was je nach Anwendung allerdings unerwünscht sein kann.
 
 Angenommen, wir möchten nun z.B. herausfinden, welche Buchstaben (`char`s) in einem langen `String` vorkommen.
 Hätten wir eine Datenstruktur, welche Duplikate einfach unterbindet, so könnten wir folgendes machen:
@@ -30,7 +30,7 @@ CharSet cs = new CharSetImpl();
 String str = "In Ulm und um Ulm und um Ulm herum";
 
 for (char c : str.toLowerCase().toCharArray()) {
-	if (c == ' ') continue;
+	if (c == ' ') continue;  // überspringe Leerzeichen
 	cs.add(c)
 }
 
@@ -52,13 +52,14 @@ interface CharSet {
 }
 ```
 
-> Hinweis: Da ein Set keine sequenzielle Ordnung hat gibt es statt `length` eine `size` Methode, und die `remove` Methode nimmt keinen Index, sondern einen Wert!
+> Hinweis: Da ein Set keine Ordnung hat, also alle Elemente "einfach so" darin liegen ohne Index-Nummern, gibt es statt der `length` eine `size` Methode.
+> Daher übergibt man der `remove` Methode auch keinen Index, sondern einen Wert!
 
 
 ## Innere Klassen
 
-Wenn wir dieses nun analog zur Liste implementieren, so brauchen wir wieder eine Hilfsklasse, welche die eigentlichen Daten speichert, und die Datenstruktur aufspannt.
-Da diese Klasse spezifisch für diese Struktur und Implementierung ist, kann diese als _innere_ Klasse angelegt werden:
+Wenn wir ein Set nun analog zur Liste implementieren, so brauchen wir wieder eine Hilfsklasse, welche die eigentlichen Daten speichert und die Datenstruktur aufspannt.
+Da die Klasse spezifisch für diese Struktur und Implementierung ist, kann sie als _innere_ Klasse angelegt werden:
 
 ```java
 class CharSetImpl1 implements CharSet {
@@ -78,15 +79,15 @@ class CharSetImpl1 implements CharSet {
 
 Innere Klassen sind in Java...
 
-- sinnvoll, wenn sie nur innerhalb einer Klasse, also lokal verwendet werden.
-- normal oder `static` definiert; normale innere Klassen können auf die Variablen der äusseren Instanz zugreifen, _statische_ innere Klassen können nur auf statische Variablen und Methoden der äusseren Klasse zugreifen.
-- mit Sichtbarkeiten versehen wie Variablen und Methoden: _package_, `private`, `public`.
+- sinnvoll, wenn sie ausschließlich innerhalb einer Klasse, also lokal verwendet werden.
+- normal oder `static` definiert; normale innere Klassen können auf die Variablen der äußeren Instanz zugreifen, _statische_ innere Klassen können nur auf statische Variablen und Methoden der äußeren Klasse zugreifen.
+- mit Sichtbarkeiten versehen - so wie Variablen und Methoden: _package_ (kein Schlüsselwort), `private`, `public`.
 
 
 ## Duplikate Vermeiden
 
 Wir können nun Duplikate vermeiden, indem wir vor dem Einfügen prüfen, ob ein Element schon enthalten ist.
-Dazu beginnen wir vorne, und hangeln uns bis hinten durch, wobei jedes Element auf (Wert-)Gleichheit prüfen.
+Dazu beginnen wir vorne und hangeln uns bis hinten durch, wobei wir jedes Element auf (Wert-)Gleichheit prüfen.
 
 ```java
 class CharSetImpl1 implements CharSet {
@@ -108,7 +109,7 @@ class CharSetImpl1 implements CharSet {
 }
 ```
 
-Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [Implementierung](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/examples/src/main/java/ch03/CharListImpl1.java)).
+Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [ch02.ListImpl3](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/master/examples/src/main/java/ch02/IntListImpl3.java) bzw. [ch03.CharListImpl1](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/master/examples/src/main/java/ch03/CharListImpl1.java)).
 
 
 ```java
@@ -127,9 +128,9 @@ class CharSetImpl1 implements CharSet {
 ```
 
 
-Wir wollen an dieser Stelle aber garnicht zu ausführlich werden, da die Implementierung des Sets als Liste hochgrading ineffizient ist: bei jedem `add` bzw. `contains` muss zuerst die gesamte Liste durchlaufen werden, um zu prüfen, ob das Element nicht bereits enthalten ist.
+Wir wollen an dieser Stelle aber garnicht zu ausführlich werden, da die Implementierung des Sets als Liste hochgrading ineffizient ist: bei jedem `add` bzw. `contains` muss zuerst die gesamte Liste durchlaufen werden, um zu prüfen ob das Element nicht bereits enthalten ist.
 Betrachtet man also den _Aufwand_ dieser Methoden in $O$-Notation, so ist dieser linear in der Anzahl der enthaltenen Elemente: $O(n)$.
-Das heisst praktisch gesehen: haben wir _doppelt so viele_ Elemente im Set, so dauert jeder Aufruf auch _doppelt so lang_.
+Das heißt praktisch gesehen: haben wir _doppelt so viele_ Elemente im Set, so dauert jeder Aufruf auch _doppelt so lang_.
 
 Das geht natürlich besser:
 
@@ -139,9 +140,9 @@ Das geht natürlich besser:
 Eine fundamentale Datenstruktur in der Informatik ist der _Binärbaum_.
 Er unterscheidet sich von der Liste dahingehend, dass jedes Element nicht einen, sondern _zwei_ Nachfolger hat -- daher der Name: _binär_.
 
-Ein Element zeigt also nicht _sequenziell_ auf das _nächste_ Element, sondern unterhält Referenzen auf einen _linken_ und _rechten Teilbaum_, welche dann nur _kleinere_ bzw. _größere_ Werte enthalten.
+Ein Element zeigt also nicht _sequenziell_ auf das _nächste_ Element, sondern unterhält Referenzen auf einen _linken_ und _rechten Teilbaum_, welche dann jeweils nur _kleinere_ bzw. _größere_ Werte als das Element selbst enthalten.
 
-Fügt man nun ein Element ein, so steigt man vom Wurzelknoten (engl. _root_) so weit nach links oder rechts ab, bis man entweder den Wert gefunden hat, oder an der Stelle angekommen ist, wo der neue Wert einzufügen ist.
+Fügt man nun ein Element ein, so steigt man vom Wurzelknoten (engl. _root_) so weit nach links oder rechts ab, bis man entweder den Wert gefunden hat, oder an einer Stelle angekommen ist, wo man den neuen Wert einzufügen kann.
 
 Aber ein Bild sagt mehr als 1000 Worte; hier ein Binärbaum für Zahlen (`IntSet`), in den der Reihe nach die Zahlen 4, 2, 3, 6, 1 eingefügt werden:
 
@@ -167,12 +168,12 @@ is.add(1);
 ![Baum 6/6]({{site.baseurl}}/03-tree-set/tree-od6.svg)
 
 > Die Metapher _Baum_ kommt von der Verästelung bzw. Verzweigung, auch wenn ein Baum ja eigentlich von der Wurzel nach Oben wächst.
-> Aber Informatik zählen ja auch von 0 und nicht von 1...
+> Aber Informatiker zählen ja auch von 0 und nicht von 1...
 
 
-Möchte man nun ein Element suchen (`contains`), so beginnt man am Wurzelknoten (`root`), prüft ob der Wert bereits dort vorhanden ist, und steigt ansonsten nach links bzw. rechts ab, je nachdem ob der gesuchte Wert kleiner oder größer ist.
+Möchte man nun ein Element suchen (`contains`), so beginnt man am Wurzelknoten (`root`), prüft ob der Wert bereits dort vorhanden ist, und steigt ansonsten nach links bzw. rechts ab, je nachdem ob der gesuchte Wert kleiner oder größer als das angesehene Element ist.
 
-Wie wird so ein Baum nun implementiert, und wie steigt man links oder rechts ab?
+Wie wird so ein Baum nun implementiert, und wie steigt man nach links oder rechts ab?
 Beginnen wir mit der Struktur; ein Element hat nun also nicht einen Nachfolger `next`, sondern zwei: `left` und `right`.
 
 ```java
@@ -217,7 +218,7 @@ class CharSetImpl2 implements CharSet {
 }
 ```
 
-Beim Einfügen wird nun ähnlich vorgegangen, nur dass man hier statt ein Element voraus eben nach links und rechts sehen muss:
+Beim Einfügen wird nun ähnlich vorgegangen, nur dass man hier nach links oder nach rechts schauen muss, statt einfach immer ein Element voraus:
 
 ```java
 class CharSetImpl2 implements CharSet {
@@ -300,7 +301,7 @@ Eine elegante Lösung für dieses Problem ist die [_Rekursion_](https://www.goog
 
 Wir beginnen mit der `size` Methode, welche zurück geben soll, wie viele Elemente im Baum gespeichert sind.
 
-Die Idee ist die Folgende: Vielleicht weiss ich als Baum nicht, wie man so absteigt, dass man alle Knoten besucht (und entsprechend mitzählt); aber wenn ich ein Baumelement habe, so weiss ich doch, dass ich mindestens Element habe, sowie dazu noch alle Elemente des linken und rechten Teilbaums.
+Die Idee ist die Folgende: Vielleicht weiß ich als Baum nicht, wie man so absteigt, dass man alle Knoten besucht (und entsprechend mitzählt); aber wenn ich ein Baumelement habe, so weiss ich doch, dass ich mindestens dieses Element habe, sowie dazu noch alle Elemente seines linken und rechten Teilbaums.
 Das kann man _rekursiv_ hinschreiben:
 
 ```java
@@ -433,7 +434,7 @@ private char removeRoot() {
 		// nur rechter Teilbaum, also diesen als Wurzel setzen
 		root = e.right;
 	} else if (e.right == null) {
-		// dito, fuer finks
+		// dito, fuer links
 		root = e.left;
 	} else {
 		// es gibt beide Teilbäume; links wird neue Wurzel,
@@ -490,8 +491,8 @@ Die Baumstruktur ist also wesentlich effizienter!
 ## Zusammenfassung
 
 - Ein **Set** ist im Gegensatz zu einer Liste **frei von Duplikaten**; in der Regel werden `add`, `remove`, `contains` und `size` unterstützt.
-- Da ein **Set** eine **Menge ohne Ordnung** (Reihenfolge) ist, gibt es keinen Zugriff über den Index.
-- Ein **Binärbaum** ist eine Datenstruktur, bei der Elemente **zwei** Nachfolger haben; in diesen **Teilbäumen** sind dann die kleineren und größeren Elemente gespeichert.
+- Da ein **Set** eine **Menge ohne Ordnung** (Reihenfolge) ist, gibt es keinen Zugriff über einen Index.
+- Ein **Binärbaum** ist eine Datenstruktur, bei der Elemente **zwei** Nachfolger haben; in diesen **Teilbäumen** sind dann die kleineren (links) und größeren Elemente (rechts) gespeichert.
 - Ein Set kann zwar mit einer Liste implementiert werden, ein Binärbaum ist aber **deutlich effizienter**.
 - Bei komplizierter Struktur kann **Rekursion** oft eine elegante Lösung sein; hierbei ruft eine Methode sich selbst wieder auf.
 
