@@ -52,12 +52,13 @@ interface CharSet {
 }
 ```
 
-> Hinweis: Da ein Set keine sequenzielle Ordnung hat, also alle Elemente "einfach so" darin liegen ohne Index-Nummern, gibt es statt `length` eine `size` Methode. Dadurch übergibt man der `remove` Methode auch keinen Index, sondern einen Wert!
+> Hinweis: Da ein Set keine Ordnung hat, also alle Elemente "einfach so" darin liegen ohne Index-Nummern, gibt es statt der `length` eine `size` Methode.
+> Daher übergibt man der `remove` Methode auch keinen Index, sondern einen Wert!
 
 
 ## Innere Klassen
 
-Wenn wir so ein Set nun analog zur Liste implementieren, so brauchen wir wieder eine Hilfsklasse, welche die eigentlichen Daten speichert und die Datenstruktur aufspannt.
+Wenn wir ein Set nun analog zur Liste implementieren, so brauchen wir wieder eine Hilfsklasse, welche die eigentlichen Daten speichert und die Datenstruktur aufspannt.
 Da die Klasse spezifisch für diese Struktur und Implementierung ist, kann sie als _innere_ Klasse angelegt werden:
 
 ```java
@@ -80,7 +81,7 @@ Innere Klassen sind in Java...
 
 - sinnvoll, wenn sie ausschließlich innerhalb einer Klasse, also lokal verwendet werden.
 - normal oder `static` definiert; normale innere Klassen können auf die Variablen der äußeren Instanz zugreifen, _statische_ innere Klassen können nur auf statische Variablen und Methoden der äußeren Klasse zugreifen.
-- mit Sichtbarkeiten versehen - so wie Variablen und Methoden: `package`, `private`, `public`.
+- mit Sichtbarkeiten versehen - so wie Variablen und Methoden: _package_ (kein Schlüsselwort), `private`, `public`.
 
 
 ## Duplikate Vermeiden
@@ -108,7 +109,7 @@ class CharSetImpl1 implements CharSet {
 }
 ```
 
-Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [Implementierung](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/lukas_kap3/examples/src/main/java/ch02/IntListImpl1.java)).
+Das Einfügen (`add`) kann dann analog zur Liste realisiert werden, ebenso die Methoden `size`, `remove` und `toString` (siehe [ch02.ListImpl3](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/master/examples/src/main/java/ch02/IntListImpl3.java) bzw. [ch03.CharListImpl1](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/master/examples/src/main/java/ch03/CharListImpl1.java)).
 
 
 ```java
