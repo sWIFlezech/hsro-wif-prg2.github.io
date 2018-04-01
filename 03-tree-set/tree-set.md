@@ -317,13 +317,15 @@ class CharSetImpl2 implements CharSet {
 
 			// analog.
 			if (right != null) s += right.size();
+
+			return s;
 		}
 		// ...
 	}
 
 	Element root;
 
-	public size() {
+	public int size() {
 		if (root == null) return 0;
 		else return root.size();
 	}
@@ -462,13 +464,14 @@ private char removeElement(Element parent, Element element) {
 	}
 
 	// eventuelle Teilbäume neu in den Baum einfügen
-	addElement(e.left);
-	addElement(e.right);
+	addElement(element.left);
+	addElement(element.right);
 
 	return e.value;
 }
 ```
 
+Die `addElement` Methode wird analog zur `add` Methode implementiert, und kann im [Beispielcode](https://github.com/hsro-wif-prg2/hsro-wif-prg2.github.io/blob/400b6f0a03ef5fe67e202c581aafc5be44fa927a/examples/src/main/java/ch03/CharSetImpl2.java#L52) nachvollzogen werden.
 
 > Hinweis: Diese Implementierung der `remove` Funktion fuehrt dazu, dass der Baum schlecht konditioniert ist bzw. entartet; sie ist aber recht anschaulich zu erklären.
 
