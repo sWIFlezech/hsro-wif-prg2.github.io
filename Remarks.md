@@ -70,7 +70,7 @@
 - 6/6 Vererbung
 	+ `extends` vs. `implements`
 	+ Überschreiben (`@Override`), `super`
-	+ Basisklasse `Object`
+	+ Basisklasse `Object`, immer `equals` und `hashCode` ueberschreiben!
 	+ Polymorphie
 	+ Übung: Auto, Spezialisierung
 - 6/3 ABC

@@ -50,7 +50,7 @@ Der Leistungsnachweis ist aufgeteilt in eine
 	Ein _Set_ (aus dem engl. _set:_ Menge, Gruppe) ist ein Containertyp, welcher der mathematischen Menge nachempfunden ist: jedes Element kann genau einmal vorkommen, und es gibt keine Ordnung (Reihenfolge); ein Element ist entweder enthalten oder nicht.
 	Zur Implementierung lernen wir den Binärbaum kennen, eine weitere wichtige Datenstruktur der Informatik.
 
-- **11. April: Generics**
+- **11. April: Generics ([Skript](/04-generics/), [Übung](https://github.com/hsro-wif-prg2/uebung03))**
 
 	Bisher waren die Containerklassen entweder für genau einen Datentyp, oder für die `Object`, welche für jedes Objekt verwendet werden kann.
 	_Generics_ erlauben es nun mit beliebigen _aber festgelegten_ Datentypen zu arbeiten.
