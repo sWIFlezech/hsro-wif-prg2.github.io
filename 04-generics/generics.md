@@ -497,6 +497,52 @@ Sortieren.sort(a, c);
 ```
 
 
+## Gültigkeit von Typvariablen
+
+Wir haben Typvariablen für Attribute in Klassen bzw. für innere Klassen verwendet.
+Zur Gültigkeit ist zu beachten:
+
+- Typvariablen von nicht-statischen Klassen können nur in _Instanzvariablen_ und _-methoden_ verwendet werden.
+- Typvariablen von statischen Klassen können nur für statische Methoden verwendet werden.
+
+```java
+// Klasse Aeussere generisch in T
+class Aeussere<T> {
+	T variable;  // ok
+
+	// nicht moeglich:
+	// static T gehtnicht;
+
+	// innere Klasse; gibts nur "in" Instanz von `Aeussere`
+	class Innere {
+		T hilfe;  // ok
+
+		// ebenso nicht moeglich:
+		// static T gehtnicht;
+	}
+
+	// statische Methode; ohne Instanz von Aeussere benutzbar
+	static <E> void someStaticMethod(E arg) {
+		// statische Methode, generisch in E
+
+		// nicht moeglich:
+		// T gehtnicht;
+	}
+
+	// statische innere Klasse; ebenso ohne Inst. von Auessere benutzbar
+	static class StatischeInnere<Z> {
+		Z variable;  // ok
+
+		// geht nicht:
+		// T gehtnicht;
+
+		// geht auch nicht, da E nur bei someStaticMethod
+		// E gehtauchnicht;
+	}
+}
+```
+
+
 ## Zusammenfassung
 
 - **Generics** sind ein elegantes syntaktisches Mittel, um Datenstrukturen und Algorithmen für beliebige (aber feste) Datentypen zu implementieren.
@@ -506,6 +552,7 @@ Sortieren.sort(a, c);
 - Das Interface `Comparable` erzwingt die `compareTo` Methode, um ein Objekt mit einem anderen (typischerweise des selben Typs) zu vergleichen
 - Ein `Comparator` ist ein Objekt, welches zwei Objekte gleichen aber festen Typs miteinander vergleicht.
 - `Comparable` kann ein nützlicher Bound sein, wenn Elemente verglichen werden sollen; will oder kann man die Typvariable nicht einschränken, so kann alternativ ein entsprechender `Comparator` verwendet werden.
+- Typvariablen von _nicht-statischen Klassen_ können nur im _nicht-statischen Kontext_ verwendet werden; sowohl statische als auch nicht-statische Methoden oder innere Klassen können generisch sein.
 
 
 ### Begrifflichkeit im Überblick
