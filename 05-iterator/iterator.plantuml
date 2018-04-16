@@ -1,0 +1,29 @@
+@startuml iterator
+allow_mixing
+
+
+interface Iterable<T> {
+	+iterator(): Iterator<T>
+}
+
+interface Iterator<T> {
+	+hasNext(): boolean
+	+next(): T
+}
+
+actor Client
+Iterable <..left.. Client
+Client ..right..> Iterator
+
+class SomeContainer<T> implements Iterable {
+	+iterator(): Iterator<T>
+}
+
+class SomeIterator<T> implements Iterator {
+	+hasNext(): boolean
+	+next():T 
+}
+
+SomeContainer ..right..> SomeIterator : "<<creates>>"
+
+@enduml

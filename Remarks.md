@@ -31,20 +31,22 @@
 	+ Bounds: `Set<T extends Comparable<T>>`
 	+ Ausblick: `super` und Wildcards
 - 4/18
-	+ Map als generischer assoziativer Container
-	+ Interface: put, get, containsKey, delete (?)
-	+ via List
-	+ via Binärbaum
-	+ Übung: Map, Wörter zählen, spezielle abfragen (keine Iteration)
-- 4/25
-	+ Annotationen
-	+ Einführung in die PStA (Contestsystem)
-	+ Übung: Contestsystem
-- 5/2
 	+ Iterator (und Factory)
 	+ Für Liste
 	+ Für Baum (-> Agenda); Beispiel fuer Loeschen von Elementen?
 	+ Übung: Iterator für Liste und Map; Wörter zählen
+- 4/25
+	+ Wiederholung Iteration, Liste/Tree
+	+ Map als generischer assoziativer Container
+	+ Interface: put, get, containsKey, delete (?)
+	+ Hashingfunktion: (n - 1) & hash; n = 32, 64, ... --> keep lower log(n) bits
+	+ via List
+	+ via Binärbaum
+	+ Übung: Map, Wörter zählen, spezielle abfragen (keine Iteration)
+- 5/2
+	+ Annotationen
+	+ Einführung in die PStA (Contestsystem)
+	+ Übung: Contestsystem
 - 5/9
 	+ Rekursion
 	+ ggt, fak, etc.
@@ -73,7 +75,7 @@
 	+ Basisklasse `Object`, immer `equals` und `hashCode` ueberschreiben!
 	+ Polymorphie
 	+ Übung: Auto, Spezialisierung
-- 6/3 ABC
+- 6/13 ABC
 	+ Abstrakte Klassen und Interfaces
 	+ Musiker/Auto
 	+ Übung: Zustandsautomat
@@ -83,7 +85,7 @@
 	+ Future
 	+ Consumer/Producer
 	+ Übung: Consumer/Producer
-- 6/27
+- 6/27 --> 7/4
 	+ Design Patterns: Iterator, Factory, Observer, Composite, ...
 	+ Composite
 	+ Observer

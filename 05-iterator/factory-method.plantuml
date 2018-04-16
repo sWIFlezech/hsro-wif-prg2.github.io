@@ -1,0 +1,17 @@
+@startuml factory-method
+
+interface Interface {
+	+operation()
+}
+
+class SomeClass {
+	+interface(): Interface
+}
+
+class MyInterfaceImpl implements Interface {
+	+operation()
+}
+
+SomeClass ..left..> MyInterfaceImpl : "<<creates>>"
+
+@enduml
