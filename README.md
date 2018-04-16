@@ -56,7 +56,7 @@ Der Leistungsnachweis ist aufgeteilt in eine
 	_Generics_ erlauben es nun mit beliebigen _aber festgelegten_ Datentypen zu arbeiten.
 	Wir lernen ausserdem die Interfaces `Comparable` und `Comparator` kennen.
 
-- **18. April: Iteratoren ([Skript](/05-iterator/), [Folien](/05-iterator/slides/), [Übung](https://github.com/hsro-wif-prg2/uebung03))**
+- **18. April: Iteratoren ([Skript](/05-iterator/), [Folien](/05-iterator/slides/), [Übung](https://github.com/hsro-wif-prg2/uebung04))**
 
 	Arrays und Listen verfügen über einen Indexoperator (`[]` bzw. `get(int)`) welcher verwendet werden kann um alle Elemente zu besuchen.
 	Der _Iterator_ abstrahiert dieses Prinzip: Bereitgestellt vom Container selbst, ist er ein Hilfsobjekt mit dem jedes Element des Containers besucht werden kann.
